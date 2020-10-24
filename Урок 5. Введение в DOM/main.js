@@ -25,14 +25,14 @@ for (let i = 0; i < 3; i++) {
 
 
 let Basket = [{ name: 'Краска "Белая"', price: 81 }, { name: 'Кисть', price: 135 }, { name: 'Расстворитель', price: 150 }];
-const item = document.querySelector('.crust');
+const item = document.querySelector('.prices_block').firstChild;
 Basket.forEach(link => {
     const linkElement = document.createElement('p');
     linkElement.innerText = link.name;
     item.appendChild(linkElement);
 });
 
-const item_2 = document.querySelector('.crust');
+const item_2 = document.querySelector('.prices_block').childNodes[1];
 Basket.forEach(link => {
     const linkElement = document.createElement('p');
     linkElement.innerText = `${link.price} руб`;
@@ -40,14 +40,13 @@ Basket.forEach(link => {
     item_2.appendChild(linkElement);
 });
 
-const item_3 = document.querySelector('.crust');
+const item_3 = document.querySelector('.prices_block').lastChild;
 let total = Basket.reduce(function (acc, curvalue) {
     return acc + curvalue.price;
 }, 0);
 const linkElement = document.createElement('p');
 linkElement.innerText = `Общая сумма заказа:  ${total} руб`;
 item_3.appendChild(linkElement);
-
 
 
 function paragraph1() {
