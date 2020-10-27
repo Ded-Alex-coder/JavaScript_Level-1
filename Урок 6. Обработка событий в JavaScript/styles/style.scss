@@ -1,0 +1,262 @@
+* {
+   margin: 0 auto;
+   padding: 0;
+}
+
+@mixin Wrapper {
+   max-width: 1200px;
+   margin: 0 auto;   
+}
+
+
+@font-face {
+    font-family: 'Huntsman';
+    src: url('../fonts/Huntsman.otf');
+}
+
+@font-face {
+    font-family: 'Exo';
+    src: url('../fonts/Exo.otf');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans.ttf');
+}
+
+body, html {    
+    color: #5e5e5e;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {        
+    height: 50px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: url('../images/promo.jpg') no-repeat;
+    background-size: 100%;
+    #headerInside {
+      @include Wrapper();
+   }
+   #logo {
+      width: 50px;
+      height: 50px;
+      float: left;
+      & > img {
+         width: 50px;
+      }     
+   }
+   #companyName {
+      text-align: right;
+      font-family: Huntsman, sans-serif;
+      float: left;
+      margin-left: 15px;
+      font-size: 1.3em;
+      line-height: 50px;
+      color: #fff;
+   }
+   #navWrap {
+      height: 50px;
+      float: right;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      & > .link {            
+         display: block;
+         font-family: 'Open Sans', sans-serif;
+         color: #fff;
+         text-decoration: none;
+         border-left: 1px solid rgba(255, 255, 255, 0.1);
+         border-right: 1px solid rgba(255, 255, 255, 0.1);
+         padding: 0 20px;
+         height: 70px;
+         line-height: 70px;
+         &:hover {
+            background: #5e5e5e;
+         }
+      }
+      & > a:last-child {
+         border-left: none;
+      }
+   }
+   
+}
+
+.content {
+    width: 100%;
+    height: 400px;
+    background-image: url('../images/promo.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    .heading {
+      text-align: center;
+      color: white;
+   }
+   .prices {
+      display: none;
+      width: 50%;
+      float: right;
+   }
+   .prices-click {
+      display: block;
+   }
+   .crust {
+      display: flex;
+      flex-direction: column;
+   }
+    
+}
+
+
+.catalog {
+   @include Wrapper();
+   text-align: center;
+   display: none;   
+}
+.catalog-click {
+      display: block;
+}
+
+footer {
+    float: left;
+    width: 100%;
+    height: 300px;
+    background: url('../images/footerback.png');
+    color: #fff;
+    
+   #footerInside {
+      position: relative;
+      width: 1100px;
+      margin: 0 auto;
+      height: 100%;
+   }
+
+   #copyrights {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+   }
+
+   #social {
+      padding-top: 20px;
+      width: 100%;
+      height: 40px;
+      position: absolute;
+      bottom: 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+   }
+
+   .socialItem {
+      width: 40px;
+      height: 40px;
+      margin: 0 5px;
+   }
+
+   #contacts {
+      position: absolute;
+      left: 0;
+      top: 20px;
+      width: 340px;
+   }
+
+   .contactWrap {
+      float: left;
+      width: 100%;
+      margin-bottom: 10px;
+      line-height: 40px;
+   }
+
+   .contactIcon {
+      width: 40px;
+      height: 40px;
+      float: left;
+      margin-right: 10px;
+   }
+
+   #footerNav {
+      position: absolute;
+      right: 0;
+      top: 45px;
+      width: 200px;
+   }
+
+   #footerNav a {
+      display: block;
+      text-align: right;
+      color: #e6e09a;
+      margin-bottom: 10px;
+      text-decoration: none;
+      &:hover {
+         color: #fff;
+      }
+   }
+}
+
+/* ------------------ НАЧАЛО стилей Каталога-------------- */
+
+#shopWrap {
+    width: 100%;
+    float: left;
+}
+
+.shopUnit {
+    float: left;
+    width: 28%;
+    padding: 5px;
+    border: 1px solid rgba(225, 225, 225, 0.7);
+    margin-right: 6.365%;
+    margin-bottom: 20px;
+    &:nth-child(3n) {
+    margin-right: 0;
+   }
+}
+
+.shopUnitName {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    font-family: Exo, sans-serif;
+    font-size: 1.2em;
+}
+
+.shopUnit img {
+    width: 100%;
+    height: 231px;
+}
+
+.shopUnitShortDesc {
+    text-align: justify;
+    margin-top: 10px;
+}
+
+.shopUnitPrice {
+    text-align: right;
+    padding-right: 20px;
+    margin-top: 10px;
+    color: #6a6747;
+    font-weight: bold;
+}
+
+.shopUnitMore {
+    border: none;
+    padding: 5px 15px;
+    background-color: #696969;
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #e6e09a;
+    text-decoration: none;
+    width: 100%;
+    font-size: 1em;
+    cursor: pointer;
+    &:hover {
+      color: #fff;
+      background-color: #777777;
+   }
+}
+/* ------------------ КОНЕЦ стилей для Каталога-------------- */
