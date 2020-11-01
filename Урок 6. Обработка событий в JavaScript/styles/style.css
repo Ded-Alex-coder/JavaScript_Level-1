@@ -82,6 +82,7 @@ header #navWrap > .link {
   padding: 0 20px;
   height: 70px;
   line-height: 70px;
+  cursor: pointer;
 }
 
 header #navWrap > .link:hover {
@@ -93,7 +94,6 @@ header #navWrap > a:last-child {
 }
 
 .content {
-  width: 100%;
   height: 400px;
   background-image: url("../images/promo.jpg");
   background-repeat: no-repeat;
@@ -107,13 +107,16 @@ header #navWrap > a:last-child {
 }
 
 .content .prices {
+  color: white;
   display: none;
-  width: 50%;
-  float: right;
+  border: 2px solid white;
+  border-radius: 25px;
 }
 
 .content .prices-click {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .content .crust {
@@ -130,11 +133,16 @@ header #navWrap > a:last-child {
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
-  display: none;
 }
 
 .catalog-click {
   display: block;
+}
+
+#catal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 footer {
@@ -225,22 +233,23 @@ footer #footerNav a:hover {
 }
 
 /* ------------------ НАЧАЛО стилей Каталога-------------- */
-#shopWrap {
-  width: 100%;
-  float: left;
-}
-
 .shopUnit {
-  float: left;
-  width: 28%;
   padding: 5px;
-  border: 1px solid rgba(225, 225, 225, 0.7);
   margin-right: 6.365%;
   margin-bottom: 20px;
 }
 
 .shopUnit:nth-child(3n) {
   margin-right: 0;
+}
+
+.shopUnitCart {
+  text-align: center;
+}
+
+.shopUnitCart > img {
+  height: 75px;
+  width: 75px;
 }
 
 .shopUnitName {
@@ -286,6 +295,19 @@ footer #footerNav a:hover {
 .shopUnitMore:hover {
   color: #fff;
   background-color: #777777;
+}
+
+.shopUnitMore:active {
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+  -webkit-filter: saturate(150%);
+          filter: saturate(150%);
+}
+
+.shopUnitMore:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 /* ------------------ КОНЕЦ стилей для Каталога-------------- */
